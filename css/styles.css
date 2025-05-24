@@ -1,0 +1,355 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Main Styles for AI Image Generator */
+
+
+:root {
+    --custom-bg: #0d121e;
+    --custom-card-bg: #171c2e;
+    --custom-accent: #3f83f8;
+    --custom-text: #f3f4f6;
+    --custom-muted: #9ca3af;
+    --custom-border: #4f76c0;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --btn-bg: #e0e0e0;
+}
+
+/* General Styles */
+body {
+    background: linear-gradient(to right, #191941, #000000);
+    color: var(--custom-text);
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    
+}
+
+/* Header and Brand Styling */
+.navbar-brand {
+    font-weight: 450;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    color: #ffffff;
+    background: linear-gradient(90deg, #aec6f0, #c1a7fe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
+}
+
+.navbar-brand:hover {
+    color: #75a3ff !important;
+}
+
+.brand-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.header-container {
+    backdrop-filter: blur(10px);
+    
+}
+
+.nav-item a {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+.nav-item a:hover{
+    color: #adc8ff !important;
+    
+}
+
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, #c0d7ff, #5e1afc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--custom-muted);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    margin-bottom: 1px;
+}
+
+/* Form Elements */
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px; 
+    flex-wrap: wrap; 
+}
+
+.form-control, .form-select {
+    background-color: var(--custom-card-bg);
+    
+    color: var(--custom-text);
+    border-radius: 20px;
+}
+
+.form-control {
+    border: 2px solid;
+    border-color: #ffffff;
+}
+
+.form-select {
+    width: auto; 
+    min-width: 180px; 
+    text-align: center;
+    border-color: var(--custom-border);
+    margin-left: 75px;
+    padding: 10px;
+    margin-bottom: 0%;
+    
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--custom-card-bg);
+    border-color: #795EFF !important;
+    color: var(--custom-text);
+    box-shadow: 0 0 0 0.25rem rgba(63, 131, 248, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    margin-left: 10px;
+    
+}
+
+textarea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding: 0.7rem 0.1rem !important;
+}
+
+.row .form-text {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+
+
+.generator-card {
+    
+    border-radius: 0.5rem;
+    
+    
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#generate-btn {
+    background-color: #000000 !important;
+    border-radius: 10px;
+    font-size: 1.2rem;  /* Increase text size */
+    padding: 12px 90px; /* Increase button padding */
+}
+
+/* Results and Images */
+.results-container {
+    margin-top: 2rem;
+}
+
+.image-card {
+    background-color: var(--custom-card-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--custom-border);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.generated-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem 0.5rem 0 0;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.image-info {
+    padding: 0.75rem;
+    border-top: 1px solid var(--custom-border);
+    font-size: 0.875rem;
+}
+
+.image-actions {
+    padding: 0.75rem;
+    border-top: 1px solid var(--custom-border);
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+/* Loading Animation */
+.loading-container {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.loading-text {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: var(--custom-muted);
+}
+#about h2{
+    font-size: 40px;
+    background: linear-gradient(90deg, #c0d7ff, #5e1afc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+#about{
+    text-align: center;
+}
+
+/* Our Team */
+.team-section {
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 10px;
+    ;
+}
+
+.team-section h2 {
+    font-size: 40px;
+    background: linear-gradient(90deg, #c0d7ff, #5e1afc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+}
+
+.team-section h4 {
+    color: #ffffff !important;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.team-member {
+    width: 160px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00458e; /* Blue border */
+    transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.team-member h4 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: var(--custom-card-bg);
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--custom-border);
+    text-align: center;
+    font-size: 0.783rem !important;
+    color: var(--custom-muted);
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .generator-card {
+        padding: 1rem;
+    }
+}
+
+/* Animation for loading */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.pulse-animation {
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Hover effects */
+.image-card:hover .image-actions {
+    background-color: rgba(31, 41, 55, 0.95);
+}
+
+.copy-prompt-btn:active {
+    transform: scale(0.98);
+}
